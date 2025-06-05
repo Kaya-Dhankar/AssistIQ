@@ -43,24 +43,6 @@ st.markdown("""
             font-size: 1.2em;
             margin: 0;
         }
-        .feature-card {
-            background-color:white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.2s;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
-        }
-        .feature-card h3 {
-            color: #2c3e50;
-        }
-        .feature-card p {
-            color: #7f8c8d;
-        }
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -123,38 +105,6 @@ if menu == "Home":
           </div>
       """, unsafe_allow_html=True)
 
-    st.write("---")
-    cols = st.columns(3)
-
-    features = [
-        {"title": "News", "desc": "Latest headlines from around the world.",
-         "img": "https://img.icons8.com/color/96/news.png"},
-
-        {"title": "Weather", "desc": "Up-to-date weather information for your area.",
-         "img": "https://img.icons8.com/color/96/cloud.png"},
-
-        {"title": "Music", "desc": "Discover and listen to your favorite tracks.",
-         "img": "https://img.icons8.com/color/96/musical-notes.png"},
-
-        {"title": "Language", "desc": "Translate between multiple languages easily.",
-         "img": "https://img.icons8.com/color/96/language.png"},
-
-        {"title": "Health Tracker", "desc": "Track your health and wellness data.",
-         "img": "https://img.icons8.com/color/96/heart-health.png"},
-
-        {"title": "Smart Search", "desc": "Search smarter and faster with our AI tools.",
-         "img": "https://img.icons8.com/color/96/search.png"}
-    ]
-    for i, feature in enumerate(features):
-        col = cols[i % 3]
-        with col:
-            st.markdown(f"""
-                   <div class='feature-card'>
-                       <img src='{feature['img']}' class='feature-image'/>
-                       <h3>{feature['title']}</h3>
-                       <p>{feature['desc']}</p>
-                   </div>
-               """, unsafe_allow_html=True)
 
 elif menu == "News":
     show_news()
